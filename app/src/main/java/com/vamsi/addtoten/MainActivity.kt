@@ -10,7 +10,6 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,23 +20,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         tv = findViewById(R.id.tvResult);
         et = findViewById(R.id.etExpression);
 
-//        val problem = GeneratePossibility().generateExpression();
+        val num = intent.getIntExtra("exp",0);
+        findViewById<EditText>(R.id.etExpression).setText(num.toString());
 
-//        println("aaa1 Problem = $problem");
-
-
-//        var sol = GeneratePossibility().generateSolution(problem);
-
-//        for (str in sol) {
-
-//            println("aaa1 Exp  = $str");
-
-//        }
-
-
+        generate(null);
 
     }
 
@@ -77,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
     }
 
-    fun generate(view: View) {
+    fun generate(view: View?) {
 
         val exp = Integer.parseInt(et?.text.toString());
 

@@ -146,8 +146,6 @@ class GeneratePossibility {
         val ans = ArrayList<String>();
 
         val str = String.format("%04d", num);
-                //.replace("", " ").trim().split(" ").toMutableList();
-
 
         val uniqueNumb = HashSet<String>();
 

@@ -13,11 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AddToTen"
         tools:targetApi="31">
-        <service android:name=".MyIntentService"
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".MyIntentService"
             tools:ignore="Instantiatable" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".PlayActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
